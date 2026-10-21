@@ -38,6 +38,7 @@ def plot_xbar_r(res: Dict[str, Any], filepath: Path):
     fig.suptitle(f"{res['metadata']['Label']} - Carta {res['type']} ({res['goal']})", fontsize=12)
     
     ax1.plot(range(m), res["xbar_all"], marker='o', color='blue')
+    ax2.plot(range(m), res["r_all"], marker='o', color='blue')
     
     if res.get("kalman"):
         ax1.plot(range(m), res["kalman"], linestyle='--', color='darkorange', linewidth=2, label='Filtro de Kalman')
